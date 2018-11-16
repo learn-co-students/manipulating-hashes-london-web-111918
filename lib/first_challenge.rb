@@ -14,16 +14,15 @@ def first_challenge
   }
 
   #your code here
-data.each do |attribute, value|
-  if attribute == :favorite_icecream_flavors
-  value.each do |flavor|
-    # here, each index element in an ice cream flavor string
-    puts "#{flavor}"
+  contacts.each do |person, data|
+      data.each do |key, value|
+          if key == :favorite_icecream_flavors
+              value.delete_if do |flavor|
+              flavor == "strawberry"
+          end
+      end
   end
 end
-end
-end
-
   #remember to return your newly altered contacts hash!
   contacts
 end
